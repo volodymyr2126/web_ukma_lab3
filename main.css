@@ -162,6 +162,8 @@ body{
 }
 
 .number {
+	width: 30px;
+	height: 30px;
 	font-family: Calibri, serif;
 	font-size: 16px;
 	font-weight: normal;
@@ -185,7 +187,7 @@ body{
 	border-radius: 5px;
 	border: 1px solid #CFCFD0;
 	margin-right: 2%;
-	background-color: #F4F4F4;
+	background-color: #F3F3F3;
 	color: #6F6F6F;
 	box-shadow: 0 4px #CFCFD0;
 	box-sizing: border-box;
