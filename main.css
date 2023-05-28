@@ -1,17 +1,216 @@
+body{
+	background-color: #DADADA;
+	justify-content: space-between;
+	display: flex;
+	font-family: Calibri;
+}
+.adder{
+	height: 31%;
+	justify-content: unset;
+}
+.input, .adding{
+	color: white;
+	height: 34px;
+	width: 75%;
+	margin-top: 20px;
+	margin-left: 20px;
+	margin-bottom: 20px;
+	display: block;
+	border: 1px solid lightgrey;
+	border-top-right-radius: 0px;
+	border-bottom-right-radius: 0px;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+.adding{
+	font-weight: bold;
+	height: 34px;
+	width: 20%;
+	margin-right: 20px;
+	margin-left: 0px;
+	margin-top: 16px;
+	background-color: #2285D0;
+	text-weight: bold ;
+	border: 1px solid #2285D0;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	border-top-left-radius: 0px;
+	border-bottom-left-radius: 0px;
+	box-shadow: 0 4px #2276B7;
+	box-sizing: border-box;
+
+}
+.quantity, .status, .name{
+	width: 30%;
+	height: 65%;
+	display: flex;
+	justify-content: right;
+	align-items: center;
+}
+.status{
+	justify-content: right;
+	margin-right: 6px;
+}
+.quantity{
+	color: #7B7B7B;
+}
+.name {
+	align-items: center;
+	text-indent: 8px;
+	background-color: white;
+	display: flex;
+	border-radius: 5px;
+	width: 100px;
+	justify-content: left;
+}
+.minus, .plus, .cancel, .number, .bought {
+	font-size: 14px;
+	font-weight: bold;
+	height: 95%;
+	width:38px;
+	border-radius: 50%;
+	border: #DB2828;
+	background-color: #DB2828;
+	color: white;
+	margin-left: 2px;
+}
+.minus{
+	box-shadow: 0 4px #BF2728;
+	box-sizing: border-box;
+}
+.minus:hover{
+	border: #BF2728;
+	background-color: #BF2728;
+}
+
+.number {
+	font-weight: normal;
+	background-color: #E8E8E8;
+	border-radius: 10%;
+	color: #7B7B7B;
+}
+.plus{
+	border: #22BA46;
+	background-color: #22BA46;
+	box-shadow: 0 4px darkgreen;
+	box-sizing: border-box;
+}
+.plus:hover{
+	background-color: darkgreen;
+	border: 1px solid darkgreen;
+}
+.bought{
+	width: 40%;
+	border-radius: 5px;
+	border: 1px solid #CFCFD0;
+	margin-right: 6px;
+	background-color: #F4F4F4;
+	color: #6F6F6F;
+	box-shadow: 0 4px #CFCFD0;
+	box-sizing: border-box;
+
+}
+.cancel{
+	border-radius: 10%;
+	box-shadow: 0 4px #BF2728;
+	box-sizing: border-box;
+}
+.cancel:hover{
+	border: #BF2728;
+	background-color: #BF2728;
+}
+.product_box, .cart {
+	margin-top: 30px;
+	height: 250px;
+	width: 900px;
+	display: block;
+	background-color: white;
+	border-radius: 5px;
+	margin-left: 20px;
+}
+.cart{
+	width: 300px;
+	height: 260px;
+	margin-right: 20px;
+	margin-left: unset;
+}
+
+.tomatoes{
+	text-decoration: line-through;
+	text-align: center;
+}
+.first-product, .second-product, .third-product,.adder{
+	align-items: center;
+	justify-content: space-between;
+	display: flex;
+	height: 23%;
+	border-bottom: 1px solid lightgrey;
+}
+.first-product .quantity .plus{
+	visibility: hidden;
+	position: relative;
+}
+.first-product .quantity .minus{
+	visibility: hidden;
+	position: relative;
+}
+.first-product .status .cancel{
+	visibility: hidden;
+	position: absolute;
+}
+.third-product{
+	border: 0px;
+}
+
+
+
+b{
+	font-size: 25px;
+	text-indent: 8px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	overflow: hidden;
+	border-bottom: 1px solid lightgrey;
+	height: 25%;
+	background-color: white;
+	align-items: center;
+	display: flex;
+	font-family: Calibri;
+}
+
+.remaining, .bought-item{
+	height: 25%;
+	border: 5px;
+	align-items: center;
+	display: flex;
+	font-family: Calibri;
+}
+.remaining{
+	border-bottom: 1px solid lightgrey;
+}
+.bought-item{
+	text-decoration: line-through;
+}
+.bought-item .amount{
+	text-decoration:line-through;
+}
 .product-item {
-	background-color: gray;
+	background-color: #E8E8E8;
 	display: inline-block;
-	height: 25px;
 	padding: 5px;
 	border-radius: 5px;
+	margin-left: 8px;
+	font-weight: bold;
+
 }
 
 .amount {
-	background-color: yellow;
+	background-color: #F2711D;
 	border-radius: 10px;
-	
 	display: inline-block;
 	height: 20px;
 	width: 20px;
 	text-align: center;
 }
+
+

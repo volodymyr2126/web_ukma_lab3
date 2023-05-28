@@ -1,16 +1,94 @@
 <!DOCTYPE html>
-<html>
-<head lang="uk">
-    <meta charset="UTF-8">
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, intial-scale=1.0"\>
     <title>My Page</title>
-
-
     <link rel="stylesheet" type="text/css" href="main.css" />
 </head>
 <body>
+<div class="product_box">
+	<section class="adder">
+		<input type="text" class="input"/>
+		<button type="submit" class="adding">Додати</button>
+	</section>
+
+	<section class="first-product">
+		<div class="name">
+			<label class="tomatoes">
+				Tomatoes
+			</label>
+		</div>
+		<div class="quantity">
+			<button class="minus">-</button>
+			<button class="number">2</button>
+			<button class="plus">+</button>
+		</div>
+		<div class="status">
+			<button class="bought">Не куплено</button>
+			<button class="cancel">x</button>
+		</div>
+	</section>
+
+	<section class="second-product">
+	<div class="name">
+	<label class="cookies">
+		Печиво
+	</label>
+	</div>
+	<div class="quantity">
+		<button class="minus">-</button>
+		<button class="number">2</button>
+		<button class="plus">+</button>
+	</div>
+	<div class="status">
+		<button class="bought">Куплено</button>
+		<button class="cancel">x</button>
+	</div>
+	</section>
+
+	<section class="third-product">
+	<div class="name">
+		<label class="cookies">
+			Cheese
+		</label>
+	</div>
+	<div class="quantity">
+		<button class="minus">-</button>
+		<button class="number">1</button>
+		<button class="plus">+</button>
+	</div>
+	<div class="status">
+		<button class="bought">Куплено</button>
+		<button class="cancel">x</button>
+	</div>
+	</section>
+
+</div>
+<br>
+<section class="cart">
+	<b >
+		Remaining
+	</b>
+	<div class="remaining">
 	<span class="product-item">
-		Apple
+		Cookies
 		<span class="amount">4</span>
 	</span>
+	<span class="product-item">
+		Cheese
+		<span class="amount">4</span>
+	</span>
+	</div>
+	<b>
+		Bought
+	</b>
+	<div class="bought-item">
+	<span class="product-item">
+		Tomatoes
+		<span class="amount">4</span>
+	</span>
+	</div>
+</section>
 </body>
 </html>
