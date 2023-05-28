@@ -2,19 +2,33 @@ body{
 	background-color: #DADADA;
 	justify-content: space-between;
 	display: flex;
+	flex-direction: row;
 	font-family: Calibri;
+	flex-wrap: wrap;
+	box-sizing: border-box;
+}
+.product_box, .cart {
+	margin-top: 2%;
+	height: 250px;
+	width: 70%;
+	background-color: white;
+	border-radius: 5px;
+	margin-left: 2%;
+	box-shadow: 4px 4px 8px #BFBFBF;
 }
 .adder{
 	height: 31%;
+	align-items: center;
+	display: flex;
+	border-bottom: 1px solid lightgrey;
 	justify-content: unset;
 }
 .input, .adding{
-	color: white;
 	height: 34px;
 	width: 75%;
-	margin-top: 20px;
-	margin-left: 20px;
-	margin-bottom: 20px;
+	margin-top: 2%;
+	margin-left: 2%;
+	margin-bottom: 2%;
 	display: block;
 	border: 1px solid lightgrey;
 	border-top-right-radius: 0px;
@@ -23,56 +37,93 @@ body{
 	border-bottom-left-radius: 5px;
 }
 .adding{
+	color: white;
+	font-size: 20px;
 	font-weight: bold;
 	height: 34px;
 	width: 20%;
-	margin-right: 20px;
-	margin-left: 0px;
-	margin-top: 16px;
+	margin-right: 2%;
+	margin-left: 0;
+	margin-top: 1.5%;
 	background-color: #2285D0;
-	text-weight: bold ;
 	border: 1px solid #2285D0;
-	border-top-right-radius: 5px;
-	border-bottom-right-radius: 5px;
-	border-top-left-radius: 0px;
-	border-bottom-left-radius: 0px;
+	border-radius: 0 5px 5px 0;
 	box-shadow: 0 4px #2276B7;
 	box-sizing: border-box;
-
+}
+.adding:hover{
+	background-color: #2276B7;
+	border:#2276B7;
+}
+.input:focus{
+	outline:none;
+	border-radius: 0 5px 5px 0;
+	border: 2px solid #2285D0;
+}
+.input::placeholder{
+	text-indent: 4px;
 }
 .quantity, .status, .name{
-	width: 30%;
+	width: 33%;
 	height: 65%;
 	display: flex;
 	justify-content: right;
 	align-items: center;
 }
 .status{
-	justify-content: right;
-	margin-right: 6px;
+	margin-right: 1%;
 }
 .quantity{
+	justify-content: center;
 	color: #7B7B7B;
 }
 .name {
+	margin-left:3%;
 	align-items: center;
-	text-indent: 8px;
 	background-color: white;
 	display: flex;
 	border-radius: 5px;
-	width: 100px;
 	justify-content: left;
 }
+
+.cheese{
+	display: flex;
+	overflow: hidden;
+	height: 80%;
+	border: 1px solid #60AEEA;
+	box-shadow: 4px 4px 8px #C0DEF5;
+}
+.cheese::placeholder{
+	color:black;
+}
+.cheese:focus{
+	outline: none;
+	box-shadow: 0 0 0;
+}
+
+.tomatoes{
+	text-decoration: line-through;
+	text-align: center;
+}
+
+.first-product, .second-product, .third-product{
+	align-items: center;
+	justify-content: space-between;
+	display: flex;
+	height: 23%;
+	border-bottom: 1px solid lightgrey;
+}
+
 .minus, .plus, .cancel, .number, .bought {
 	font-size: 14px;
 	font-weight: bold;
-	height: 95%;
-	width:38px;
+	height: 36px;
+	width:40px;
 	border-radius: 50%;
 	border: #DB2828;
 	background-color: #DB2828;
 	color: white;
-	margin-left: 2px;
+	margin-left: 2%;
 }
 .minus{
 	box-shadow: 0 4px #BF2728;
@@ -84,6 +135,8 @@ body{
 }
 
 .number {
+	font-family: Calibri;
+	font-size: 16px;
 	font-weight: normal;
 	background-color: #E8E8E8;
 	border-radius: 10%;
@@ -92,18 +145,19 @@ body{
 .plus{
 	border: #22BA46;
 	background-color: #22BA46;
-	box-shadow: 0 4px darkgreen;
+	box-shadow: 0 4px #21A340;
 	box-sizing: border-box;
 }
 .plus:hover{
-	background-color: darkgreen;
-	border: 1px solid darkgreen;
+	background-color: #21A340;
+	border: 1px solid #21A340;
 }
 .bought{
+	overflow: hidden;
 	width: 40%;
 	border-radius: 5px;
 	border: 1px solid #CFCFD0;
-	margin-right: 6px;
+	margin-right: 2%;
 	background-color: #F4F4F4;
 	color: #6F6F6F;
 	box-shadow: 0 4px #CFCFD0;
@@ -119,33 +173,7 @@ body{
 	border: #BF2728;
 	background-color: #BF2728;
 }
-.product_box, .cart {
-	margin-top: 30px;
-	height: 250px;
-	width: 900px;
-	display: block;
-	background-color: white;
-	border-radius: 5px;
-	margin-left: 20px;
-}
-.cart{
-	width: 300px;
-	height: 260px;
-	margin-right: 20px;
-	margin-left: unset;
-}
 
-.tomatoes{
-	text-decoration: line-through;
-	text-align: center;
-}
-.first-product, .second-product, .third-product,.adder{
-	align-items: center;
-	justify-content: space-between;
-	display: flex;
-	height: 23%;
-	border-bottom: 1px solid lightgrey;
-}
 .first-product .quantity .plus{
 	visibility: hidden;
 	position: relative;
@@ -161,10 +189,18 @@ body{
 .third-product{
 	border: 0px;
 }
+.third-product .quantity .minus{
+	opacity: 50%;
+}
 
+.cart{
+	width: 24%;
+	height: 260px;
+	margin-right: 1.5%;
+	margin-left: 1.5%;
+}
 
-
-b{
+.titles{
 	font-size: 25px;
 	text-indent: 8px;
 	border-top-left-radius: 5px;
@@ -183,7 +219,6 @@ b{
 	border: 5px;
 	align-items: center;
 	display: flex;
-	font-family: Calibri;
 }
 .remaining{
 	border-bottom: 1px solid lightgrey;
@@ -195,22 +230,95 @@ b{
 	text-decoration:line-through;
 }
 .product-item {
+	overflow: hidden;
+	font-size: 13px;
+	color: #636363;
 	background-color: #E8E8E8;
 	display: inline-block;
-	padding: 5px;
+	padding: 8px;
 	border-radius: 5px;
-	margin-left: 8px;
+	margin-left: 3%;
 	font-weight: bold;
-
 }
-
 .amount {
+	font-weight: bold;
+	color: white;
 	background-color: #F2711D;
 	border-radius: 10px;
 	display: inline-block;
-	height: 20px;
-	width: 20px;
+	height: 18px;
+	width: 18px;
 	text-align: center;
 }
+@media (max-width:500px) {
+	.product_box{
+		width: 100%;
+		order:1;
+	}
+	.cart{
+		width: 100%;
+		order:1;
+	}
+}
+.popup-container {
+	border:0;
+	padding: 0;
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	width: 100px;
+	height: 40px;
+	overflow: hidden;
+	background-color: #AF01DA;
+	color:white;
+	transition: height 0.3s ease-in-out;
+	margin-right: 50px;
+	border-radius: 10px 10px 0px 0px;
+	display: block;
+}
 
+.buylist{
+	align-items: center;
+	font-size: 20px;
+	display: flex;
+	justify-content: center;
+	color:white;
+	height:40px;
+	margin:auto;
+}
+.creator{
+	margin:0;
+	height: 15px;
+	font-size: 10px;
+	display: flex;
+	text-indent: 6px;
+}
+.myname{
+	text-indent: 6px;
+	text-align: left;
+	display: flex;
+	margin:0;
+	height:20px;
+	font-size: 15px;
+}
+.popup-container:hover{
+	height: 105px;
+}
+@media print {
+	* {
+		-webkit-print-color-adjust: exact; /* Chrome, Safari */
+	}
+	.popup-container{
+		background-color: white;
+		border: 3px solid black;
+		height: 85px;
+	}
+	.popup-container .creator, .popup-container .myname{
+		color:black;
+	}
+	.popup-container .buylist{
+		visibility: hidden;
+		position:absolute;
+	}
+}
 

@@ -2,16 +2,16 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, intial-scale=1.0"\>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"\>
     <title>My Page</title>
     <link rel="stylesheet" type="text/css" href="main.css" />
 </head>
 <body>
 <div class="product_box">
-	<section class="adder">
-		<input type="text" class="input"/>
-		<button type="submit" class="adding">Додати</button>
-	</section>
+	<form class="adder">
+		<input type="text" class="input" placeholder="Enter name" />
+		<button type="submit" class="adding" data-tooltip="Add goods">Add</button>
+	</form>
 
 	<section class="first-product">
 		<div class="name">
@@ -20,75 +20,79 @@
 			</label>
 		</div>
 		<div class="quantity">
-			<button class="minus">-</button>
+			<button class="minus" data-tooltip="reduce">-</button>
 			<button class="number">2</button>
-			<button class="plus">+</button>
+			<button class="plus" data-tooltip="increase">+</button>
 		</div>
 		<div class="status">
-			<button class="bought">Не куплено</button>
-			<button class="cancel">x</button>
+			<button class="bought">Available</button>
+			<button class="cancel" data-tooltip="cancel">x</button>
 		</div>
 	</section>
 
 	<section class="second-product">
 	<div class="name">
 	<label class="cookies">
-		Печиво
+		Cookies
 	</label>
 	</div>
 	<div class="quantity">
-		<button class="minus">-</button>
+		<button class="minus" data-tooltip="reduce">-</button>
 		<button class="number">2</button>
-		<button class="plus">+</button>
+		<button class="plus" data-tooltip="increase">+</button>
 	</div>
 	<div class="status">
-		<button class="bought">Куплено</button>
-		<button class="cancel">x</button>
+		<button class="bought">Bought</button>
+		<button class="cancel" data-tooltip="cancel">x</button>
 	</div>
 	</section>
 
-	<section class="third-product">
+	<form class="third-product">
 	<div class="name">
-		<label class="cookies">
-			Cheese
-		</label>
+		<input type="text" class="cheese" placeholder="Cheese"/>
 	</div>
 	<div class="quantity">
-		<button class="minus">-</button>
+		<button class="minus" data-tooltip="reduce">-</button>
 		<button class="number">1</button>
-		<button class="plus">+</button>
+		<button class="plus" data-tooltip="increase">+</button>
 	</div>
 	<div class="status">
-		<button class="bought">Куплено</button>
-		<button class="cancel">x</button>
+		<button class="bought">Bought</button>
+		<button class="cancel" data-tooltip="cancel">x</button>
 	</div>
-	</section>
+	</form>
 
 </div>
-<br>
+<br/>
 <section class="cart">
-	<b >
+	<b class="titles">
 		Remaining
 	</b>
 	<div class="remaining">
 	<span class="product-item">
 		Cookies
-		<span class="amount">4</span>
+		<span class="amount">2</span>
 	</span>
 	<span class="product-item">
 		Cheese
-		<span class="amount">4</span>
+		<span class="amount">1</span>
 	</span>
 	</div>
-	<b>
+	<b class="titles">
 		Bought
 	</b>
 	<div class="bought-item">
 	<span class="product-item">
 		Tomatoes
-		<span class="amount">4</span>
+		<span class="amount">2</span>
 	</span>
 	</div>
 </section>
+	<button class="popup-container">
+		<b class="buylist">Buy List</b>
+		<p class="creator">Created by:</p>
+		<b class="myname">Volodymyr</b>
+		<b class="myname">Materynskiy</b>
+	</button>
 </body>
 </html>
