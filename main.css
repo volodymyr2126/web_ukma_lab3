@@ -3,7 +3,7 @@ body{
 	justify-content: space-between;
 	display: flex;
 	flex-direction: row;
-	font-family: Calibri;
+	font-family: Calibri, serif;
 	flex-wrap: wrap;
 	box-sizing: border-box;
 }
@@ -31,10 +31,7 @@ body{
 	margin-bottom: 2%;
 	display: block;
 	border: 1px solid lightgrey;
-	border-top-right-radius: 0px;
-	border-bottom-right-radius: 0px;
-	border-top-left-radius: 5px;
-	border-bottom-left-radius: 5px;
+	border-radius: 5px 0 0 5px;
 }
 .adding{
 	color: white;
@@ -113,7 +110,36 @@ body{
 	height: 23%;
 	border-bottom: 1px solid lightgrey;
 }
-
+[data-tooltip]{
+	position: relative;
+	display: inline-block;
+}
+[data-tooltip]::before{
+	content: attr(data-tooltip);
+	visibility: hidden;
+	max-width: 100px;
+	background-color: purple;
+	color: white;
+	text-align: center;
+	font-size: 14px;
+	font-weight: normal;
+	border-radius: 5px;
+	padding: 5px;
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 1;
+	transform: translateX(-50%);
+	opacity: 0;
+	transition: all 0.7s ease-in-out;
+	bottom: calc(120%);
+	left: 50%;
+}
+[data-tooltip]:hover::before {
+	visibility: visible;
+	opacity: 1;
+}
 .minus, .plus, .cancel, .number, .bought {
 	font-size: 14px;
 	font-weight: bold;
@@ -130,12 +156,13 @@ body{
 	box-sizing: border-box;
 }
 .minus:hover{
+
 	border: #BF2728;
 	background-color: #BF2728;
 }
 
 .number {
-	font-family: Calibri;
+	font-family: Calibri, serif;
 	font-size: 16px;
 	font-weight: normal;
 	background-color: #E8E8E8;
@@ -187,10 +214,10 @@ body{
 	position: absolute;
 }
 .third-product{
-	border: 0px;
+	border: 0;
 }
 .third-product .quantity .minus{
-	opacity: 50%;
+	opacity: 0.5;
 }
 
 .cart{
@@ -211,7 +238,7 @@ body{
 	background-color: white;
 	align-items: center;
 	display: flex;
-	font-family: Calibri;
+	font-family: Calibri, serif;
 }
 
 .remaining, .bought-item{
@@ -273,7 +300,7 @@ body{
 	color:white;
 	transition: height 0.3s ease-in-out;
 	margin-right: 50px;
-	border-radius: 10px 10px 0px 0px;
+	border-radius: 10px 10px 0 0;
 	display: block;
 }
 
