@@ -118,7 +118,7 @@ body{
 	content: attr(data-tooltip);
 	visibility: hidden;
 	max-width: 100px;
-	background-color: #4D01DA;
+	background-color: #AF01DA;
 	color: white;
 	text-align: center;
 	font-size: 14px;
