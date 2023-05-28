@@ -152,6 +152,7 @@ body{
 	margin-left: 2%;
 }
 .minus{
+	font-size: 23px;
 	box-shadow: 0 4px #BF2728;
 	box-sizing: border-box;
 }
@@ -166,13 +167,13 @@ body{
 	height: 30px;
 	font-family: Calibri, serif;
 	font-size: 16px;
-	font-weight: normal;
+	font-weight: bold;
 	background-color: #E8E8E8;
 	border-radius: 10%;
 	color: #7B7B7B;
 }
 .plus{
-	border: #22BA46;
+	font-size: 23px;
 	background-color: #22BA46;
 	box-shadow: 0 4px #21A340;
 	box-sizing: border-box;
