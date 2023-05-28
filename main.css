@@ -20,7 +20,7 @@ body{
 	height: 31%;
 	align-items: center;
 	display: flex;
-	border-bottom: 1px solid lightgrey;
+	border-bottom: 1.5px solid lightgrey;
 	justify-content: unset;
 }
 .input, .adding{
@@ -37,7 +37,7 @@ body{
 	color: white;
 	font-size: 20px;
 	font-weight: bold;
-	height: 34px;
+	height: 33.5px;
 	width: 20%;
 	margin-right: 2%;
 	margin-left: 0;
@@ -108,7 +108,7 @@ body{
 	justify-content: space-between;
 	display: flex;
 	height: 23%;
-	border-bottom: 1px solid lightgrey;
+	border-bottom: 1.5px solid lightgrey;
 }
 [data-tooltip]{
 	position: relative;
@@ -118,7 +118,7 @@ body{
 	content: attr(data-tooltip);
 	visibility: hidden;
 	max-width: 100px;
-	background-color: purple;
+	background-color: #4D01DA;
 	color: white;
 	text-align: center;
 	font-size: 14px;
@@ -233,7 +233,7 @@ body{
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
 	overflow: hidden;
-	border-bottom: 1px solid lightgrey;
+	border-bottom: 1.5px solid lightgrey;
 	height: 25%;
 	background-color: white;
 	align-items: center;
@@ -248,7 +248,7 @@ body{
 	display: flex;
 }
 .remaining{
-	border-bottom: 1px solid lightgrey;
+	border-bottom: 1.5px solid lightgrey;
 }
 .bought-item{
 	text-decoration: line-through;
@@ -258,7 +258,7 @@ body{
 }
 .product-item {
 	overflow: hidden;
-	font-size: 13px;
+	font-size: 14px;
 	color: #636363;
 	background-color: #E8E8E8;
 	display: inline-block;
@@ -271,10 +271,10 @@ body{
 	font-weight: bold;
 	color: white;
 	background-color: #F2711D;
-	border-radius: 10px;
+	border-radius: 50%;
 	display: inline-block;
-	height: 18px;
-	width: 18px;
+	height: 20px;
+	width: 20px;
 	text-align: center;
 }
 @media (max-width:500px) {
@@ -292,14 +292,14 @@ body{
 	padding: 0;
 	position: fixed;
 	bottom: 0;
-	right: 0;
+	left: 0;
 	width: 100px;
 	height: 40px;
 	overflow: hidden;
 	background-color: #AF01DA;
 	color:white;
-	transition: height 0.3s ease-in-out;
-	margin-right: 50px;
+	transition: all 1s ease;
+	margin-left: 50px;
 	border-radius: 10px 10px 0 0;
 	display: block;
 }
@@ -330,6 +330,7 @@ body{
 }
 .popup-container:hover{
 	height: 105px;
+	background-color: #4D01DA;
 }
 @media print {
 	* {
