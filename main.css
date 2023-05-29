@@ -157,7 +157,6 @@ body{
 	box-sizing: border-box;
 }
 .minus:hover{
-
 	border: #BF2728;
 	background-color: #BF2728;
 }
@@ -183,7 +182,6 @@ body{
 	border: 1px solid #21A340;
 }
 .bought{
-	overflow: hidden;
 	width: 40%;
 	border-radius: 5px;
 	border: 1px solid #CFCFD0;
@@ -194,6 +192,12 @@ body{
 	box-sizing: border-box;
 
 }
+.bought:hover{
+	background-color: #CFCFD0;
+	border:#CFCFD0;
+	box-sizing: border-box;
+}
+
 .cancel{
 	border-radius: 10%;
 	box-shadow: 0 4px #BF2728;
