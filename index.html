@@ -13,52 +13,52 @@
 		<button type="submit" class="adding" data-tooltip="Add goods">Add</button>
 	</form>
 
-	<section class="first-product">
+	<form class="item item_bought">
 		<div class="name" contenteditable="false">
 			<p>
 				Tomatoes
 			</p>
 		</div>
 		<div class="quantity">
-			<button class="minus" data-tooltip="decrease">-</button>
-			<button class="number">2</button>
-			<button class="plus" data-tooltip="increase">+</button>
+			<button class="minus" onclick="decreaseNumber(event)" type="button" data-tooltip="decrease">-</button>
+			<button class="number" disabled="disabled">2</button>
+			<button class="plus" onclick="increaseNumber(event)" type="button" data-tooltip="increase">+</button>
 		</div>
 		<div class="status">
-			<button class="bought" data-tooltip="stats">Available</button>
-			<button class="cancel" data-tooltip="cancel">x</button>
+			<button class="bought" onclick="makeBought(event)" type="button" data-tooltip="stats">Available</button>
+			<button class="cancel" onclick="deleting(event)" type="button" data-tooltip="cancel">x</button>
 		</div>
-	</section>
+	</form>
 
-	<section class="second-product">
+	<form class="item">
 	<div class="name" contenteditable="true">
 	<p >
 		Cookies
 	</p>
 	</div>
 	<div class="quantity">
-		<button class="minus" data-tooltip="decrease">-</button>
-		<button class="number">2</button>
-		<button class="plus" data-tooltip="increase">+</button>
+		<button class="minus" onclick="decreaseNumber(event)" type="button" data-tooltip="decrease">-</button>
+		<button class="number" disabled="disabled">2</button>
+		<button class="plus" onclick="increaseNumber(event)" type="button" data-tooltip="increase">+</button>
 	</div>
 	<div class="status">
-		<button class="bought" data-tooltip="stats">Bought</button>
-		<button class="cancel" data-tooltip="cancel">x</button>
+		<button class="bought" onclick="makeBought(event)" type="button" data-tooltip="stats">Bought</button>
+		<button class="cancel" onclick="deleting(event)" type="button" data-tooltip="cancel">x</button>
 	</div>
-	</section>
+	</form>
 
-	<form class="third-product">
+	<form class="item last">
 	<div class="name" contenteditable="true">
-		<p >Cheese</p>
+		<p>Cheese</p>
 	</div>
 	<div class="quantity">
-		<button class="minus" data-tooltip="decrease">-</button>
-		<button class="number">1</button>
-		<button class="plus" data-tooltip="increase">+</button>
+		<button class="minus inactive" onclick="decreaseNumber(event)" type="button" data-tooltip="decrease">-</button>
+		<button class="number" disabled="disabled">1</button>
+		<button class="plus" onclick="increaseNumber(event)" type="button" data-tooltip="increase">+</button>
 	</div>
 	<div class="status">
-		<button class="bought" data-tooltip="stats">Bought</button>
-		<button class="cancel" data-tooltip="cancel">x</button>
+		<button class="bought" onclick="makeBought(event)" type="button" data-tooltip="stats">Bought</button>
+		<button class="cancel" onclick="deleting(event)" type="button" data-tooltip="cancel">x</button>
 	</div>
 	</form>
 
@@ -94,5 +94,6 @@
 		<b class="myname">Volodymyr</b>
 		<b class="myname">Materynskiy</b>
 	</button>
+<script src="warehouse.js"></script>
 </body>
 </html>

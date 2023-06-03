@@ -17,11 +17,14 @@ body{
 	box-shadow: 4px 4px 8px #BFBFBF;
 }
 .adder{
-	height: 31%;
+	height: 78px;
 	align-items: center;
 	display: flex;
 	border-bottom: 1.5px solid lightgrey;
 	justify-content: unset;
+}
+.item_bought .name{
+	text-decoration: line-through;
 }
 .input, .adding{
 	height: 34px;
@@ -66,6 +69,7 @@ body{
 	display: flex;
 	justify-content: right;
 	align-items: center;
+	margin-bottom: 3px;
 }
 .status{
 	margin-right: 1%;
@@ -103,11 +107,11 @@ body{
 	text-align: center;
 }
 
-.first-product, .second-product, .third-product{
+.item, .item_bought {
 	align-items: center;
 	justify-content: space-between;
 	display: flex;
-	height: 23%;
+	height: 58px;
 	border-bottom: 1.5px solid lightgrey;
 }
 [data-tooltip]{
@@ -208,23 +212,25 @@ body{
 	background-color: #BF2728;
 }
 
-.first-product .quantity .plus{
+.item_bought .quantity .plus{
 	visibility: hidden;
 	position: relative;
 }
-.first-product .quantity .minus{
+.item_bought .quantity .minus{
 	visibility: hidden;
 	position: relative;
 }
-.first-product .status .cancel{
+.item_bought .status .cancel{
 	visibility: hidden;
 	position: absolute;
 }
-.third-product{
+.last{
 	border: 0;
 }
-.third-product .quantity .minus{
+
+.quantity .minus.inactive {
 	opacity: 0.5;
+	pointer-events: none;
 }
 
 .cart{
