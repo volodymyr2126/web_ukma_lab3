@@ -1,7 +1,17 @@
+let cart = document.getElementsByClassName('cart')[0];
+let cart_items = cart.getElementsByClassName('product-item');
 
 function deleting(event){
-    let name = event.target.closest("form");
-    name.remove();
+    let form = event.target.closest(".item");
+    let name = form.getElementsByTagName('div')[0].getElementsByTagName('p')[0].textContent;
+    form.remove();
+    for(let i = 0; i<cart_items.length; i++){
+        let temp = cart_items[i];
+        if(temp.textContent.split("\n")[1].trim()==name.trim()){
+            temp.remove();
+            break;
+        }
+    }
     const section = document.getElementsByClassName('product_box');
     let lines = document.getElementsByTagName('form');
     for(let i=0;i<lines.length;i++){
@@ -17,21 +27,49 @@ function deleting(event){
 }
 function makeBought(event){
     let button = event.target.closest(".bought");
-    let name = event.target.closest("form");
+    let form = event.target.closest(".item");
+    let name = form.getElementsByTagName('div')[0].getElementsByTagName('p')[0].textContent;
+    let bought = document.getElementsByClassName('cart')[0].getElementsByClassName('bought-item')[0];
+    let available = document.getElementsByClassName('cart')[0].getElementsByClassName('remaining')[0];
     if (button.textContent==="Bought") {
-        name.classList.add('item_bought');
+        form.classList.add('item_bought');
         button.textContent = "Available";
+        for(let i = 0; i<cart_items.length; i++){
+            let temp = cart_items[i];
+            if(temp.textContent.split("\n")[1].trim()==name.trim()){
+                temp.remove();
+                bought.appendChild(temp);
+                break;
+            }
+        }
     }
     else if (button.textContent==="Available") {
-        name.classList.remove('item_bought');
+        form.classList.remove('item_bought');
         button.textContent = "Bought";
+        for(let i = 0; i<cart_items.length; i++){
+            let temp = cart_items[i];
+            if(temp.textContent.split("\n")[1].trim()==name.trim()){
+                temp.remove();
+                available.appendChild(temp);
+                break;
+            }
+        }
     }
 }
 function decreaseNumber(event) {
+    let form = event.target.closest(".item");
+    let name = form.getElementsByTagName('div')[0].getElementsByTagName('p')[0].textContent;
     let numberButton = event.target.closest('.quantity').querySelector('.number');
     let currentNumber = parseInt(numberButton.textContent);
     let minusButton = event.target.closest('.quantity').querySelector('.minus');
     if (currentNumber > 1) {
+        for(let i = 0; i<cart_items.length; i++){
+            let temp = cart_items[i];
+            if(temp.textContent.split("\n")[1].trim()==name.trim()){
+                temp.getElementsByClassName('amount')[0].textContent = currentNumber-1;
+                break;
+            }
+        }
         numberButton.textContent = currentNumber - 1;
         if(currentNumber==2){
             minusButton.classList.add('inactive');
@@ -40,10 +78,75 @@ function decreaseNumber(event) {
 
 }
 function increaseNumber(event) {
+    let form = event.target.closest(".item");
+    let name = form.getElementsByTagName('div')[0].getElementsByTagName('p')[0].textContent;
     let numberButton = event.target.closest('.quantity').querySelector('.number');
     let currentNumber = parseInt(numberButton.textContent);
     let minusButton = event.target.closest('.quantity').querySelector('.minus');
+    for(let i = 0; i<cart_items.length; i++){
+        let temp = cart_items[i];
+        if(temp.textContent.split("\n")[1].trim()==name.trim()){
+            temp.getElementsByClassName('amount')[0].textContent = currentNumber+1;
+            break;
+        }
+    }
     numberButton.textContent = currentNumber + 1;
     minusButton.classList.remove('inactive');
 }
 
+function adding(event){
+    let inputElement = document.querySelector('.input');
+    let inputValue = inputElement.value;
+    inputValue = inputValue.charAt(0).toUpperCase() + inputValue.slice(1)
+    let existing = false;
+    for(let i = 0; i<cart_items.length; i++){
+        let temp = cart_items[i];
+        if(temp.textContent.split("\n")[1].trim().toLowerCase()==inputValue.trim().toLowerCase()){
+            existing = true;
+            break;
+        }
+    }
+    if(existing) return;
+    let newElement = document.createElement('form');
+    const section = document.getElementsByClassName('product_box');
+    const currentHeight = section[0].offsetHeight;
+    const newHeight = currentHeight + 58.5;
+    let lines = document.getElementsByTagName('form');
+    lines[lines.length-1].classList.remove('last');
+    newElement.classList.add('item');
+    newElement.classList.add('last');
+    newElement.innerHTML = `
+    <div class="name" contenteditable="false">
+        <p>
+            ${inputValue}
+        </p>
+    </div>
+    <div class="quantity">
+        <button class="minus inactive" onclick="decreaseNumber(event)" type="button" data-tooltip="decrease">-</button>
+        <button class="number" disabled="disabled">1</button>
+        <button class="plus" onclick="increaseNumber(event)" type="button" data-tooltip="increase">+</button>
+    </div>
+    <div class="status">
+        <button class="bought" onclick="makeBought(event)" type="button" data-tooltip="stats">Bought</button>
+        <button class="cancel" onclick="deleting(event)" type="button" data-tooltip="cancel">x</button>
+    </div>
+`;
+     let secondElement = document.createElement('span');
+     secondElement.classList.add('product-item')
+    secondElement.innerHTML = `
+     ${inputValue}
+     <span class="amount">1</span>
+    `
+   let remaining = cart.getElementsByClassName('remaining');
+     remaining[0].appendChild(secondElement);
+    section[0].style.height = newHeight + 'px';
+    section[0].appendChild(newElement);
+
+}
+function handleKeyDown(event) {
+    if (event.key === "Enter") {
+        event.preventDefault(); // Prevent form submission
+        let addButton = document.querySelector('.adding');
+        addButton.click(); // Trigger button click event
+    }
+}

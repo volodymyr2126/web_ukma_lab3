@@ -9,8 +9,8 @@
 <body>
 <div class="product_box">
 	<form class="adder">
-		<input type="text" class="input" placeholder="Enter name" />
-		<button type="submit" class="adding" data-tooltip="Add goods">Add</button>
+		<input type="text" class="input" onkeydown="handleKeyDown(event)" placeholder="Enter name" />
+		<button type="button" onclick="adding(event)" class="adding" data-tooltip="Add goods">Add</button>
 	</form>
 
 	<form class="item item_bought">

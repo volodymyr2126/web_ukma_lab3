@@ -16,6 +16,12 @@ body{
 	margin-left: 2%;
 	box-shadow: 4px 4px 8px #BFBFBF;
 }
+.cart{
+	overflow: hidden;
+}
+.input:focus{
+
+}
 .adder{
 	height: 78px;
 	align-items: center;
@@ -69,7 +75,7 @@ body{
 	display: flex;
 	justify-content: right;
 	align-items: center;
-	margin-bottom: 3px;
+	margin-bottom: 6px;
 }
 .status{
 	margin-right: 1%;
@@ -85,6 +91,9 @@ body{
 	display: flex;
 	border-radius: 5px;
 	justify-content: left;
+}
+.name p{
+	overflow: hidden;
 }
 
 .cheese{
@@ -111,7 +120,6 @@ body{
 	align-items: center;
 	justify-content: space-between;
 	display: flex;
-	height: 58px;
 	border-bottom: 1.5px solid lightgrey;
 }
 [data-tooltip]{
@@ -225,6 +233,7 @@ body{
 	position: absolute;
 }
 .last{
+
 	border: 0;
 }
 
@@ -247,7 +256,7 @@ body{
 	border-top-right-radius: 5px;
 	overflow: hidden;
 	border-bottom: 1.5px solid lightgrey;
-	height: 25%;
+	height: 65px;
 	background-color: white;
 	align-items: center;
 	display: flex;
@@ -255,20 +264,19 @@ body{
 }
 
 .remaining, .bought-item{
-	height: 25%;
+	height: 65px;
 	border: 5px;
 	align-items: center;
 	display: flex;
+	flex-wrap: wrap;
+	overflow: auto;
 }
+
 .remaining{
 	border-bottom: 1.5px solid lightgrey;
 }
-.bought-item{
-	text-decoration: line-through;
-}
-.bought-item .amount{
-	text-decoration:line-through;
-}
+
+
 .product-item {
 	overflow: hidden;
 	font-size: 14px;
@@ -278,7 +286,11 @@ body{
 	padding: 8px;
 	border-radius: 5px;
 	margin-left: 3%;
+	margin-bottom: 3px;
 	font-weight: bold;
+}
+.bought-item .amount{
+	text-decoration:line-through;
 }
 .amount {
 	font-weight: bold;
