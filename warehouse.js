@@ -10,9 +10,10 @@ function remember(event){
 function rename(event){
     let form = event.target.closest(".item");
     let name = form.getElementsByTagName('div')[0].getElementsByTagName('p')[0].textContent;
+    name = name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()
     for(let i = 0; i<cart_items.length; i++){
         let temp = cart_items[i];
-        if(temp.textContent.split("\n")[0].trim().toLowerCase()==name.toLowerCase().trim()){
+        if(temp.textContent.split("\n")[0].trim().toLowerCase()===name.toLowerCase().trim()){
             form.getElementsByTagName('div')[0].getElementsByTagName('p')[0].textContent= edited_item_name;
             return;
         }
@@ -21,22 +22,21 @@ function rename(event){
         let temp = cart_items[i];
         if(temp.textContent.split("\n")[0].trim()===edited_item_name.trim()){
            temp.innerHTML = `${name}
-<span class="amount">${edited_item_quantity}</span>`
+<span class="amount">${edited_item_quantity}</span>`;
+            form.getElementsByTagName('div')[0].getElementsByTagName('p')[0].textContent = name;
             break;
         }
     }
 
 }
-function trimNumbersFromString(str) {
-    return str.replace(/\d+/g, "");
-}
+
 function deleting(event){
     let form = event.target.closest(".item");
     let name = form.getElementsByTagName('div')[0].getElementsByTagName('p')[0].textContent;
     form.remove();
     for(let i = 0; i<cart_items.length; i++){
         let temp = cart_items[i];
-        if(temp.textContent.split("\n")[0].trim()==name.trim()){
+        if(temp.textContent.split("\n")[0].trim()===name.trim()){
             temp.remove();
             break;
         }
@@ -47,7 +47,7 @@ function deleting(event){
         lines[i].classList.remove('last')
     }
     const lastLineIndex = lines.length - 1;
-    if(lines.length!=0){
+    if(lines.length!==0){
         lines[lastLineIndex].classList.add('last');
     }
     const currentHeight = section[0].offsetHeight;
@@ -62,10 +62,11 @@ function makeBought(event){
     let available = document.getElementsByClassName('cart')[0].getElementsByClassName('remaining')[0];
     if (button.textContent==="Bought") {
         form.classList.add('item_bought');
+        form.getElementsByClassName('name')[0].setAttribute("contenteditable", 'false')
         button.textContent = "Not bought";
         for(let i = 0; i<cart_items.length; i++){
             let temp = cart_items[i];
-            if(temp.textContent.split("\n")[0].trim()==name.trim()){
+            if(temp.textContent.split("\n")[0].trim()===name.trim()){
                 temp.remove();
                 bought.appendChild(temp);
                 break;
@@ -74,10 +75,11 @@ function makeBought(event){
     }
     else if (button.textContent==="Not bought") {
         form.classList.remove('item_bought');
+        form.getElementsByClassName('name')[0].setAttribute("contenteditable", 'true')
         button.textContent = "Bought";
         for(let i = 0; i<cart_items.length; i++){
             let temp = cart_items[i];
-            if(temp.textContent.split("\n")[0].trim()==name.trim()){
+            if(temp.textContent.split("\n")[0].trim()===name.trim()){
                 temp.remove();
                 available.appendChild(temp);
                 break;
@@ -94,13 +96,13 @@ function decreaseNumber(event) {
     if (currentNumber > 1) {
         for(let i = 0; i<cart_items.length; i++){
             let temp = cart_items[i];
-            if(trimNumbersFromString(temp.textContent.split("\n")[0].trim())==name){
+            if(temp.textContent.split("\n")[0].trim()===name){
                 temp.getElementsByClassName('amount')[0].textContent = currentNumber-1;
                 break;
             }
         }
         numberButton.textContent = currentNumber - 1;
-        if(currentNumber==2){
+        if(currentNumber===2){
             minusButton.classList.add('inactive');
         }
     }
@@ -114,7 +116,7 @@ function increaseNumber(event) {
     let minusButton = event.target.closest('.quantity').querySelector('.minus');
     for(let i = 0; i<cart_items.length; i++){
         let temp = cart_items[i];
-        if(trimNumbersFromString(temp.textContent.split("\n")[0].trim())==name.trim()){
+        if(temp.textContent.split("\n")[0].trim()===name.trim()){
             temp.getElementsByClassName('amount')[0].textContent = currentNumber+1;
             break;
         }
@@ -123,16 +125,16 @@ function increaseNumber(event) {
     minusButton.classList.remove('inactive');
 }
 
-function adding(event){
+function adding(){
     let inputElement = document.querySelector('.input');
     let inputValue = inputElement.value.trim();
     if(inputValue === "") return;
     inputElement.value = "";
-    inputValue = inputValue.charAt(0).toUpperCase() + inputValue.slice(1)
+    inputValue = inputValue.charAt(0).toUpperCase() + inputValue.slice(1).toLowerCase()
     let existing = false;
     for(let i = 0; i<cart_items.length; i++){
         let temp = cart_items[i];
-        if(temp.textContent.split("\n")[1].trim().toLowerCase()==inputValue.trim().toLowerCase()){
+        if(temp.textContent.split("\n")[1].trim().toLowerCase()===inputValue.trim().toLowerCase()){
             existing = true;
             break;
         }
