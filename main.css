@@ -32,6 +32,9 @@ body{
 .item_bought .name{
 	text-decoration: line-through;
 }
+.bought-item{
+	text-decoration: line-through;
+}
 .input, .adding{
 	height: 34px;
 	width: 75%;

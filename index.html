@@ -14,10 +14,8 @@
 	</form>
 
 	<form class="item item_bought">
-		<div class="name" contenteditable="false">
-			<p>
-				Tomatoes
-			</p>
+		<div class="name" contenteditable="false" onfocus="remember(event)" onblur="rename(event)">
+			<p>Tomatoes</p>
 		</div>
 		<div class="quantity">
 			<button class="minus" onclick="decreaseNumber(event)" type="button" data-tooltip="decrease">-</button>
@@ -25,16 +23,14 @@
 			<button class="plus" onclick="increaseNumber(event)" type="button" data-tooltip="increase">+</button>
 		</div>
 		<div class="status">
-			<button class="bought" onclick="makeBought(event)" type="button" data-tooltip="stats">Available</button>
+			<button class="bought" onclick="makeBought(event)" type="button" data-tooltip="stats">Not bought</button>
 			<button class="cancel" onclick="deleting(event)" type="button" data-tooltip="cancel">x</button>
 		</div>
 	</form>
 
 	<form class="item">
-	<div class="name" contenteditable="true">
-	<p >
-		Cookies
-	</p>
+	<div class="name" contenteditable="true"  onfocus="remember(event)" onblur="rename(event)">
+		<p>Cookies</p>
 	</div>
 	<div class="quantity">
 		<button class="minus" onclick="decreaseNumber(event)" type="button" data-tooltip="decrease">-</button>
@@ -48,7 +44,7 @@
 	</form>
 
 	<form class="item last">
-	<div class="name" contenteditable="true">
+	<div class="name" contenteditable="true"  onfocus="remember(event)" onblur="rename(event)">
 		<p>Cheese</p>
 	</div>
 	<div class="quantity">
@@ -69,12 +65,10 @@
 		Remaining
 	</b>
 	<div class="remaining">
-	<span class="product-item">
-		Cookies
+	<span class="product-item">Cookies
 		<span class="amount">2</span>
 	</span>
-	<span class="product-item">
-		Cheese
+	<span class="product-item">Cheese
 		<span class="amount">1</span>
 	</span>
 	</div>
@@ -82,8 +76,7 @@
 		Bought
 	</b>
 	<div class="bought-item">
-	<span class="product-item">
-		Tomatoes
+	<span class="product-item">Tomatoes
 		<span class="amount">2</span>
 	</span>
 	</div>
