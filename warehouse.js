@@ -12,7 +12,6 @@ function rename(event){
     let name = form.getElementsByTagName('div')[0].getElementsByTagName('p')[0].textContent;
     for(let i = 0; i<cart_items.length; i++){
         let temp = cart_items[i];
-        window.alert(temp.textContent.split("\n")[0].trim().toLowerCase()==name.trim())
         if(temp.textContent.split("\n")[0].trim().toLowerCase()==name.toLowerCase().trim()){
             form.getElementsByTagName('div')[0].getElementsByTagName('p')[0].textContent= edited_item_name;
             return;
