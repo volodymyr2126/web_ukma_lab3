@@ -99,26 +99,6 @@ body{
 	overflow: hidden;
 }
 
-.cheese{
-	display: flex;
-	overflow: hidden;
-	height: 80%;
-	border: 1px solid #60AEEA;
-	box-shadow: 4px 4px 8px #C0DEF5;
-}
-.cheese::placeholder{
-	color:black;
-}
-.cheese:focus{
-	outline: none;
-	box-shadow: 0 0 0;
-}
-
-.tomatoes{
-	text-decoration: line-through;
-	text-align: center;
-}
-
 .item, .item_bought {
 	align-items: center;
 	justify-content: space-between;
@@ -247,7 +227,7 @@ body{
 
 .cart{
 	width: 24%;
-	height: 260px;
+	height: auto;
 	margin-right: 1.5%;
 	margin-left: 1.5%;
 }
@@ -264,6 +244,7 @@ body{
 	align-items: center;
 	display: flex;
 	font-family: Calibri, serif;
+	box-sizing: border-box;
 }
 
 .remaining, .bought-item{

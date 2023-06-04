@@ -134,7 +134,7 @@ function adding(){
     let existing = false;
     for(let i = 0; i<cart_items.length; i++){
         let temp = cart_items[i];
-        if(temp.textContent.split("\n")[1].trim().toLowerCase()===inputValue.trim().toLowerCase()){
+        if(temp.textContent.split("\n")[0].trim().toLowerCase()===inputValue.trim().toLowerCase()){
             existing = true;
             break;
         }
