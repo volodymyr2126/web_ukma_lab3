@@ -9,12 +9,12 @@ function remember(event){
 }
 function rename(event){
     let form = event.target.closest(".item");
-    let name = form.getElementsByTagName('div')[0].getElementsByTagName('p')[0].textContent;
+    let name = form.getElementsByTagName('div')[0].getElementsByTagName('p')[0].textContent.trim();
     name = name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()
     for(let i = 0; i<cart_items.length; i++){
         let temp = cart_items[i];
         if(temp.textContent.split("\n")[0].trim().toLowerCase()===name.toLowerCase().trim()){
-            form.getElementsByTagName('div')[0].getElementsByTagName('p')[0].textContent= edited_item_name;
+            form.getElementsByTagName('div')[0].getElementsByTagName('p')[0].textContent= edited_item_name.trim();
             return;
         }
     }
